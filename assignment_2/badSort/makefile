@@ -3,12 +3,12 @@ CFLAGS = -g -Wall -std=c99
 
 all: badSort
 
-badSort: main.o badsort.o
+badSort: main.o badSort.o
 	$(CC) $(CFLAGS) -o $@ $^ -lm
 
-main.o: main.c badsort.h
+main.o: main.c badSort.h
 
-insertsort.o: badsort.c badsort.h
+badSort.o: badSort.c badSort.h
 
 memCheck :
 	valgrind --tool=memcheck --leak-check=yes main

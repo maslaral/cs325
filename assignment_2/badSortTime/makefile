@@ -1,18 +1,18 @@
 CC = gcc
 CFLAGS = -g -Wall -std=c99
 
-all: badsort
+all: badSortTime
 
-badsort: main.o badsort.o
+badSortTime: main.o badSortTime.o
 	$(CC) $(CFLAGS) -o $@ $^ -lm
 
-main.o: main.c badsort.h
+main.o: main.c badSortTime.h
 
-insertsort.o: badsort.c badsort.h
+badSortTime.o: badSortTime.c badSortTime.h
 
 memCheck :
 	valgrind --tool=memcheck --leak-check=yes main
 
 clean:
 	rm *.o
-	rm badsort 
+	rm badSortTime 

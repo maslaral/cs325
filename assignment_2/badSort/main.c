@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "badsort.h"
+#include "badSort.h"
 
 int main(int argc, char *argv[])
 {

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "badsort.h"
+#include "badSortTime.h"
 
 struct DynArr
 {
@@ -15,42 +15,23 @@ struct DynArr
 // values from the file, creates the array, calls
 // the sort function, and then saves the values
 // into the output file
-void readFile(char *filename, float a)
+void readFile(int n, float a)
 {
-  int val, read, size;
-  char string[1000];
-
-  FILE *fptr;
-
-  // opening the file passed into the function
-  fptr = fopen(filename, "r");
-  assert(fptr != NULL);
-
-  // creates the output file
+  int r;
   writeFile();
 
-  while (fgets(string, sizeof(string), fptr))
-  {
-    read = 0; // keeps track of bytes read in sscanf
-    DynArr *v;
-    v = newDynArr(4);
-    char *input = string;
+  DynArr *v;
+  v = newDynArr(4);
 
-    sscanf(input, "%d%n", &val, &read);
-    size = val - 1;
-    input += read;
-    
-    while (sscanf(input, "%d%n", &val, &read) > 0)
-    {
-      addDynArr(v, val); // adds value to the dynamic array
-      input += read;
-    }
-    
-    badSort(v, 0, size, a);
-    saveFile(v);     // saves the dynamic array to the output file
-    deleteDynArr(v); // deletes the array to free memory
+  for (int i = 0; i < n; i++)
+  {
+    r = rand() % 10001;
+    addDynArr(v, r); // adds the rand value to the array
   }
-  fclose(fptr);
+  
+  badSort(v, 0, v->size, a);
+  saveFile(v);     // saves the dynamic array to the output file
+  deleteDynArr(v); // deletes the array to free memory
 };
 
 // Description: Initializes the dynamic array by allocating

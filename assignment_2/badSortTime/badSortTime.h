@@ -1,5 +1,5 @@
-#ifndef BADSORT_INCLUDED
-#define BADSORT_INCLUDED 1
+#ifndef BADSORTTIMED_INCLUDED
+#define BADSORTTIMED_INCLUDED 1
 
 typedef struct DynArr DynArr;
 
@@ -10,7 +10,7 @@ void writeFile();
 void freeDynArr(DynArr *v);
 void deleteDynArr(DynArr *v);
 void addDynArr(DynArr *v, int val);
-void readFile(char *filename, float a);
+void readFile(int n, float a);
 void saveFile(DynArr *v);
 void badSort(DynArr *v, int l, int r, float a);
 

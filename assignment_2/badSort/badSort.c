@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "badsort.h"
+#include "badSort.h"
 
 struct DynArr
 {
