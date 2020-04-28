@@ -1,5 +1,6 @@
 def shop_spree(items, cap, prc, wgt):
   total = 0
+
   # create matrix
   matrix = []
   for i in range(items + 1):
@@ -22,7 +23,7 @@ def shop_spree(items, cap, prc, wgt):
     i += 1
     
   total += matrix[i - 1][w - 1]
-  
+
   i, j = items, cap
   item_list = []
   item_list.append(total)

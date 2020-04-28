@@ -10,16 +10,16 @@ int main(int argc, char *argv[])
     double average_time;
     int a, b;
     float num;
-    
+
     printf("Enter a fraction for the a value: ");
     scanf("%d/%d", &a, &b);
-    
+
     num = (float)a / (float)b;
 
     printf("|  n  |  t1  |  t2  |  t3  |  t4  |  t5  | avrg |\n");
     printf("=================================================\n");
 
-    for (int i = 100; i < 1000; i += 100)
+    for (int i = 50; i <= 250; i += 50)
     {
         average_time = 0.0;
         if (i == 100000)
@@ -59,6 +59,6 @@ int main(int argc, char *argv[])
             printf(" %.2f |\n", average_time);
         }
     }
-    
+
     return 0;
 };
