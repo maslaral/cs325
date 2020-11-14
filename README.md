@@ -4,3 +4,4 @@ This repository contains coursework from Oregon State's Analysis of Algorithms c
 
 - Assignment 1 - merge and insert sort
 - Assignment 2 - example of a poor performing sorting algorithm
+- Assignment 3 - knapsack problem
